@@ -65,7 +65,7 @@ const Navbar = () => {
       </div>
 
       <div className={`${encoded.className} flex md:w-full justify-center tracking-wide `}>
-        <ul className="flex md:gap-12 py-3 gap-4 text-sm">
+        <ul className="flex md:gap-12 py-3 gap-4 text-sm md:text-base">
           {["Bags", "Travel", "Accessories", "Gifting", "Jewellery"].map((item, idx) => (
             <Link href="#" key={idx}>
               <li className="cursor-pointer hover:text-gray-600 transition-all duration-200">
