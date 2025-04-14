@@ -27,12 +27,12 @@ const ProductGrid = () => {
   return (
     <div className=" px-10 py-6">
       <div className="flex justify-between items-center">
-        <p className="text-xl  tracking-wider">
+        <p className=" md:text-xl  md:tracking-wider text-[16px]">
           <span>Bags</span>
           <span className="px-2">•</span>
           <span>Backpacks</span>
         </p>
-        <p className="text-xl  tracking-wider flex items-center gap-5">
+        <p className="tmd:text-xl  md:tracking-wider text-[16px] flex items-center gap-5">
           <span className="">{products.length} Products</span>
           <Image src={uparrow} alt="" />
         </p>

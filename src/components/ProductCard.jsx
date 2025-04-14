@@ -4,7 +4,7 @@ import { GoBookmark } from "react-icons/go";
 const ProductCard = ({ title, price, image }) => {
   return (
     <div
-      className="w-[283px] h-[483px]  border rounded-2xl border-[#141414] relative
+      className="w-[283px] h-[483px]  border rounded-2xl border-[#141414] relative cursor-pointer  hover:scale-105 transition-all duration-300 ease-in-out
     "
     >
       <div className="flex flex-col gap-2">

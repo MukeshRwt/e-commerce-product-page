@@ -31,16 +31,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`w-full z-50 ${nav ? "sticky-nav" : ""}`}>
-      <div className="flex justify-between items-center p-4 px-10">
+    <nav className={`w-full z-50 ${nav ? "sticky-nav" : ""} overflow-x-hidden`}>
+      <div className="flex justify-between items-center p-4 sm:px-10">
         <Link href={"/"}>
           <h1
-            className={`${comme.className} font-normal text-[20px] leading-[20px] tracking-[0.55em] cursor-pointer `}
+            className={`${comme.className} sm:text-[20px] sm:leading-[20px] tracking-[0.55em] cursor-pointer `}
           >
             TANN TRIM
           </h1>
         </Link>
-        <div className="flex gap-6 items-center">
+        <div className="flex md:gap-6 items-center gap-3">
           <Image
             src={search}
             alt="Search Icon"
@@ -64,8 +64,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`${encoded.className} flex w-full justify-center tracking-wide`}>
-        <ul className="flex gap-12 py-3">
+      <div className={`${encoded.className} flex md:w-full justify-center tracking-wide `}>
+        <ul className="flex md:gap-12 py-3 gap-4 text-sm">
           {["Bags", "Travel", "Accessories", "Gifting", "Jewellery"].map((item, idx) => (
             <Link href="#" key={idx}>
               <li className="cursor-pointer hover:text-gray-600 transition-all duration-200">
