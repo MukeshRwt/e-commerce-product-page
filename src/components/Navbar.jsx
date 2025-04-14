@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <nav className={`w-full z-50 ${nav ? "sticky-nav" : ""} overflow-x-hidden`}>
-      <div className="flex justify-between items-center p-4 sm:px-10">
+      <div className="flex justify-between items-center py-4 sm:px-10">
         <Link href={"/"}>
           <h1
             className={`${comme.className} sm:text-[20px] sm:leading-[20px] tracking-[0.55em] cursor-pointer `}
@@ -41,31 +41,24 @@ const Navbar = () => {
           </h1>
         </Link>
         <div className="flex md:gap-6 items-center gap-3">
-          <Image
-            src={search}
-            alt="Search Icon"
-            className="w-[18px] h-[20px] object-contain cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out"
-          />
-          <Image
-            src={user}
-            alt="User Icon"
-            className="w-[18px] h-[20px] object-contain cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out"
-          />
-          <Image
-            src={bookmark}
-            alt="Bookmark Icon"
-            className="w-[18px] h-[20px] object-contain cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out"
-          />
-          <Image
-            src={shoppingbag}
-            alt="Shopping Bag Icon"
-            className="w-[18px] h-[20px] object-contain cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out"
-          />
+          {[
+            { src: search, alt: "Search Icon" },
+            { src: user, alt: "User Icon" },
+            { src: bookmark, alt: "Bookmark Icon" },
+            { src: shoppingbag, alt: "Shopping Bag Icon" },
+          ].map((icon, idx) => (
+            <Image
+              key={idx}
+              src={icon.src}
+              alt={icon.alt}
+              className="w-[20px] h-[22px] object-contain cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out"
+            />
+          ))}
         </div>
       </div>
 
-      <div className={`${encoded.className} flex md:w-full justify-center tracking-wide `}>
-        <ul className="flex md:gap-12 py-3 gap-4 text-sm md:text-base">
+      <div className={`${encoded.className} flex md:w-full justify-center tracking-wide mb-3`}>
+        <ul className="flex md:gap-14 py-3 gap-4 text-sm md:text-base">
           {["Bags", "Travel", "Accessories", "Gifting", "Jewellery"].map((item, idx) => (
             <Link href="#" key={idx}>
               <li className="cursor-pointer hover:text-gray-600 transition-all duration-200">

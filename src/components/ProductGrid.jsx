@@ -25,7 +25,7 @@ const ProductGrid = () => {
   }, []);
 
   return (
-    <div className=" px-10 py-6">
+    <div className="px-12 py-6">
       <div className="flex justify-between items-center">
         <p className=" md:text-xl  md:tracking-wider text-[16px]">
           <span>Bags</span>
