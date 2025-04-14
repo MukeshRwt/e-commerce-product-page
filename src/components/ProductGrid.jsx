@@ -16,7 +16,6 @@ const ProductGrid = () => {
       .then((res) => {
         setProducts(res.data);
         setLoading(false);
-        console.log(res.data);
       })
       .catch((err) => {
         console.error(err);
@@ -27,26 +26,35 @@ const ProductGrid = () => {
   return (
     <div className="px-12 py-6">
       <div className="flex justify-between items-center">
-        <p className=" md:text-xl  md:tracking-wider text-[16px]">
+        <p className="md:text-xl md:tracking-wider text-[16px]">
           <span>Bags</span>
           <span className="px-2">•</span>
           <span>Backpacks</span>
         </p>
-        <p className="tmd:text-xl  md:tracking-wider text-[16px] flex items-center gap-5">
-          <span className="">{products.length} Products</span>
-          <Image src={uparrow} alt="" />
+        <p className="md:text-xl md:tracking-wider text-[16px] flex items-center gap-5">
+          <span>{products.length} Products</span>
+          <Image src={uparrow} alt="Up Arrow" />
         </p>
       </div>
-      <div className="py-10 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-12 place-items-center">
-        {products.map((prodct) => (
-          <ProductCard
-            key={prodct.id}
-            title={prodct.title}
-            price={prodct.price}
-            image={prodct.image}
-          />
-        ))}
-      </div>
+
+      {loading ? (
+        <div className="flex justify-center items-center h-64 text-gray-600 text-lg">
+          Loading products...
+        </div>
+      ) : products.length === 0 ? (
+        <div className="text-center text-red-500 py-12">No products available.</div>
+      ) : (
+        <div className="py-10 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-12 place-items-center">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
