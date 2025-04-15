@@ -11,7 +11,7 @@ A sleek and modern e-commerce product listing page built with **Next.js**, **Tai
 - 📱 Fully responsive grid layout
 - 📌 Sticky animated navbar on scroll
 - 🎯 Clean and minimalistic design
-- 🔄 Currency converted (USD → INR with one decimal place)
+
 
 ---
 
